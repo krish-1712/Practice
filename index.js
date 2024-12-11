@@ -16,6 +16,8 @@
 
 // b[0]=2;
 
+// console.log(a)
+// console.log(b)
 // console.log(a[0])
 // console.log(b[0])
 
@@ -27,6 +29,7 @@
 // const jsonString = '{"name": "Alice", "age": 25, "city": "Wonderland"}';
 // const jsonObject = JSON.parse(jsonString);
 // console.log(jsonObject);
+
 //----------------------------------------------------
 
 // JSON STRINGFY
@@ -52,6 +55,7 @@
 
 //----------------------------------------------------
 
+
 // Normal Function 
 // A normal function has an argument object which you can access in the function
 
@@ -62,11 +66,11 @@
 //   }
 
 // Examples:
-// function greet() {
-//   return "Hello, world!";
+// function greet(name) {
+//   return `Hello, world! ${name}`;
 // }
 
-// console.log(greet()); // Output: "Hello, world!"
+// console.log(greet("New York")); // Output: "Hello, world! New York"
 
 //----------------------------------------------------
 
@@ -142,9 +146,30 @@
 
 // Var : we can redeclare and reassign mutiple Times
 
+// Examples: 
+// var a=10;
+// console.log(a);
+// a=20;
+// console.log(a); 
+
 // Let : we can reassign values but we cannot redecalre
+// Examples: 
+
+// let b = 10;  // Declare 'b' with value 10
+// console.log(b);  // Output: 10
+
+// b = 30;  // Reassign 'b' to 30 (this is allowed)
+// console.log(b);  // Output: 30
+
+// // let b = 50;  // If you try to redeclare 'b', it will cause an error (This is NOT allowed)
+
 
 // Const : we cannot do both redelcare and reassign
+// Examples: 
+// const a = 10;  // Declaring a constant
+// console.log(a);  // Output: 10
+
+// // a = 20;  // This would throw an error: 'TypeError: Assignment to constant variable.'
 
 
 //----------------------------------------------------
@@ -162,10 +187,10 @@
 // });
 
 // Examples:
-// let numberss = [1, 2, 3, 4, 5];
+// let numbers = [1, 2, 3, 4, 5];
 
-// numberss.forEach((number, index,) => {
-//     numberss[index] = number * 2; 
+// numbers.forEach((number, index,) => {
+//     numbers[index] = number * 2; 
 // });
 
 // console.log(numbers); // Output: [2, 4, 6, 8, 10]
@@ -217,6 +242,7 @@
 
 // Examples 
 
+
 // let name = "Alice";
 // let age = 30;
 
@@ -229,13 +255,26 @@
 // console.log(person); // Output: { name: 'Alice', age: 30 }
 
 
-// With shorthand 
+// let name = "Alice";
+//  let age = 30;
+
+// //With shorthand 
+
+// //object
 // let person ={
 //     name,
 //     age
 // }
 
 // console.log(person); // Output: { name: 'Alice', age: 30 }
+
+// //Array
+// let persons =[{
+//     name,
+//     age
+// }]
+
+// console.log(persons); // Output: [{ name: 'Alice', age: 30 }]
 
 //----------------------------------------------------
 
@@ -293,16 +332,63 @@
 // use Curly {} Braces to destructure an object
 // The variables names should match the property of names
 
-// Examples
- 
-// let person={name:'krish',age:20}
-// let {name,age}=person
+// Examples                     
+// const person = { 
+//     name: "Alice", 
+//     age: 25 
+// };
+
+// const { name ,age } = person;
 
 // console.log(name); // Output: Alice
-// console.log(age); // Output: 30
+// console.log(age);  // Output: 25
 
+  
 //----------------------------------------------------
 
+// Global Scope
+
+// Variables declared outside of any function or block are in the global scope
+// Examples
+// let globalVar = "I am a global variable";
+
+// function printGlobalVar() {
+//   console.log(globalVar); // Accessible here
+// }
+// printGlobalVar(); // Output: I am a global variable
+
+// console.log(globalVar);   // Accessible here too
+
+
+// Function Scope
+// Variables declared within a function using var, let, or const are accessible only within that function.
+
+// Examples
+
+// function myFunction() {
+//     let functionVar = "I am a function-scoped variable";
+//     console.log(functionVar); // Accessible here
+//   }
+//   myFunction();
+
+//    console.log(functionVar); // Error: functionVar is not defined
+  
+//  Block Scope
+// Variables declared with let or const inside a block (e.g., within {} braces) are accessible only inside that block.
+
+// Examples
+// {
+//     let blockVar = "I am a block-scoped variable";
+//     console.log(blockVar); // Accessible here
+//   }
+//   // console.log(blockVar); // Error: blockVar is not defined
+//   {
+//     var blockVar = "I am not block-scoped";
+//     console.log(blockVar); // Accessible here
+//   }
+//   console.log(blockVar); // Accessible here because `var` is function-scoped
+    
+//----------------------------------------------------
 
 //OOP (Object oriented Programming)
 
@@ -352,11 +438,11 @@
 //     { name: 'Charlie', age: 35 }
 // ];
 
-// let name =users.map((number)=>number.name)
-// console.log(name);  // Output: ['Alice', 'Bob', 'Charlie']
+// let names =users.map((number)=>number.name)
+// console.log(names);  // Output: ['Alice', 'Bob', 'Charlie']
 
-// let age =users.map((number)=>number.age)
-// console.log(age);  // Output: [25, 30, 35]
+// let ages =users.map((number)=>number.age)
+// console.log(ages);  // Output: [25, 30, 35]
 
 
 // let users = [
@@ -384,17 +470,7 @@
 // })
 // console.log(even);
 
-// let users = [
-//     { name: 'Alice', age: 25 },
-//     { name: 'Bob', age: 30 },
-//     { name: 'Charlie', age: 35 }
-// ];
-
-// let ages = users.filter((number)=>{
-//     return number.age>30
-// })
-
-// console.log(ages);
+                                                                                                                                                                                                                                                                                                                                    
 
 //----------------------------------------------------
 
@@ -410,30 +486,16 @@
 
 // console.log(total)
 
-
-// let users = [
-//     { name: 'Alice', age: 25 },
-//     { name: 'Bob', age: 30 },
-//     { name: 'Charlie', age: 35 }
-// ];
-
-// let userobject=users.reduce((current,acc)=>{
-//     current[acc.name]=acc.age
-//     return current
-// })
-
-// console.log(userobject)
-
 //----------------------------------------------------
 
 // SetTimeout:
 
 // It will excecute only once 
-// It is the function what we nee to excute
+// It is the function what we need to excute
 // It need some delay time 
 
 // Syntax :
-// settimeout(function name,delay time)
+// setTimeout(function name,delay time)
 // function function name(){
 
 // }
@@ -460,7 +522,6 @@
 // It excecutes again and again at specific time 
 
 // Syntax:
-// Syntax :
 // setinterval(function name,delay time)
 // function function name(){
 
@@ -481,7 +542,7 @@
 //     console.log('This message appears every second');
 // }, 1000);
 
-// // After 5 seconds, clear the interval
+// // // After 5 seconds, clear the interval
 // setTimeout(function() {
 //     clearInterval(intervalId);
 //     console.log('Interval cleared');
@@ -494,12 +555,13 @@
 
 // Examples:
 // function greet(name, callback) {
-//     console.log('Hello, ' + name);
+//     console.log(`Hello,${name}`);
 //     callback();
 // }
 
 // function sayGoodbye() {
 //     console.log('Goodbye!');
+    
 // }
 
 // greet('Alice', sayGoodbye);
@@ -548,6 +610,7 @@
 // 3. callback queue
 // 4. event loop
 
+
 // 1. Call Stack:
 // It is the place in the browser where it keeps all the track of code 
 // It will excecute whatever the statement inside it 
@@ -580,13 +643,13 @@
 // Promise has 3 states
 // 1.Pending=> Pending unless or untill the async operation in process
 // 2.fullfilled=> we will get the value , to handle error we can use .then()
-// 3.rejected=> we will get an error, to handle erroe we can use .catch()
+// 3.rejected=> we will get an error, to handle error we can use .catch()
 // Promise can either be fullfilled or rejected , both will not happen at same time
 
 // Examples
 
 // let promise= new Promise((resolve, reject) => {
-//     let success=false;
+//     let success=true;
 //     if(success){
 //         resolve("the operation was successful")
 //     }else{
@@ -647,7 +710,7 @@
 // To handle error in async await we can use try catch 
 
 // Examples:
-// async function fetchData() {
+// const fetchData=async()=> {
 //     try {
 //         const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
 //         const data = await response.json();
@@ -683,8 +746,7 @@
 //----------------------------------------------------
 
 // synchronus or blocking model:
-// excecute line by line eg: let a=10; =>first let b=12=>second
-
+// excecute line by line eg: let a=10; =>first let b=12=>second  
 // asynchronous or non blocking model:
 // multiple operations excecuted at same time 
 
@@ -720,7 +782,6 @@
 //     )
 //   }
 
-
 // function App() {
 //     const[value, setValue] = useState(true);
 //     // console.log(val);
@@ -746,14 +807,13 @@
 // 4) You can Provide a Dependency array as the second Parameter.
 // 5) SideEffects are effects which are out of control of react like directly modifying the DOM.
 // 6) For same input conditions, the output may be changing and unexpected.
-// 7) Examples: when fetching data, but the second time some error may happen.
+// 7) Examples: when fetching data, first time it successfully fetches data, but the second time some error may happen.
 
 //Examples:
 // import React, { useState, useEffect } from 'react';
 
 // const FetchDataComponent = () => {
 //   const [data, setData] = useState([]);
-//   const [loading, setLoading] = useState(true);
 
 //   useEffect(() => {
 //     // This function will run when the component mounts
@@ -770,9 +830,6 @@
 //     fetchData();
 //   }, []); // Empty dependency array means this effect runs once on mount
 
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
 
 //   return (
 //     <div>
@@ -810,14 +867,14 @@
 
 //Examples:
 // function App() {
-
-//     const val = useRef(0)
+//     const val = useRef(0);
+//     const [data, setdata]=useState(0)
   
 //     return(
 //       <>
-//       <h1>count:{val.current}</h1>
+//          <h1>count:{val.current}</h1>
 //       <button onClick={()=> {
-//         val.current = val.current+1
+//        setdata( val.current = val.current+1)
 //         console.log(val.current);
 //       }}>Click</button>
 //       </>
@@ -880,3 +937,6 @@
 // Examples in GitHub 
 
 //----------------------------------------------------
+
+
+
