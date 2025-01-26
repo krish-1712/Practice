@@ -47,6 +47,7 @@
 //----------------------------------------------------
 
 // Javascript:
+// JS is always synchronus function it always excute line by line 
 // Javascript is a versatile,dynamically typed language,high level programming language that is widely used for both 
 // client side and server side.
 // On th client side , it runs the web browers to create a interactive web page by manipulating the DOM and handling events.
@@ -268,6 +269,9 @@
 
 // console.log(person); // Output: { name: 'Alice', age: 30 }
 
+// let name = "Alice";
+//  let age = 30;
+
 // //Array
 // let persons =[{
 //     name,
@@ -308,6 +312,12 @@
 // }
 
 // console.log(sum(1, 2, 3)); // Output: 6
+
+// Examples
+// const rest =(...numbers)=>{
+//     return numbers.reduce((acc,value)=>acc+value,0)
+// }
+// console.log(rest(1,2,3));
 
 //----------------------------------------------------
 
@@ -371,7 +381,7 @@
 //   }
 //   myFunction();
 
-//    console.log(functionVar); // Error: functionVar is not defined
+// //    console.log(functionVar); // Error: functionVar is not defined
   
 //  Block Scope
 // Variables declared with let or const inside a block (e.g., within {} braces) are accessible only inside that block.
@@ -388,6 +398,7 @@
 //   }
 //   console.log(blockVar); // Accessible here because `var` is function-scoped
     
+
 //----------------------------------------------------
 
 //OOP (Object oriented Programming)
@@ -445,14 +456,14 @@
 // console.log(ages);  // Output: [25, 30, 35]
 
 
-// let users = [
+// let user = [
 //     { name: 'Alice', age: 25 },
 //     { name: 'Bob', age: 30 },
 //     { name: 'Charlie', age: 35 }
 // ];
 
 // // Using map to create a new array of objects with both name and age
-// let userInfo = users.map(user => ({ name: user.name, age: user.age }));
+// let userInfo = user.map(user => ({ name: user.name, age: user.age }));
 
 // console.log(userInfo);
 
@@ -469,11 +480,8 @@
 //     return user%2==0
 // })
 // console.log(even);
-
-                                                                                                                                                                                                                                                                                                                                    
-
+                                                                                                                                                                                                                                                                                                                                  
 //----------------------------------------------------
-
 
 //Reduce
 
@@ -488,6 +496,50 @@
 
 //----------------------------------------------------
 
+//Alert
+
+//Examples:
+
+
+// var a = 10;
+// var b = 20;
+
+// if (a > b) {
+//     alert("a is greater");
+// } else {
+//     alert("b is greater");
+// }
+
+
+//----------------------------------------------------
+
+//Confirm
+
+//Examples:
+
+// let isConfirmed = confirm("Are you sure you want to continue?");
+// if (isConfirmed) {
+//   console.log("User clicked OK");
+// } else {
+//   console.log("User clicked Cancel");
+// }
+
+//----------------------------------------------------
+
+//Prompt
+
+//Examples:
+
+// let password = prompt("Enter your password:");
+// if (password === "1234") {
+//   alert("Access granted!");
+// } else {
+//   alert("Access denied!");
+// }
+
+//----------------------------------------------------
+
+
 // SetTimeout:
 
 // It will excecute only once 
@@ -497,7 +549,6 @@
 // Syntax :
 // setTimeout(function name,delay time)
 // function function name(){
-
 // }
 
 // Examples:
@@ -677,7 +728,7 @@
 
 // Examples
 
-// fetch('https://jsonplaceholder.typicode.com/posts/1')
+// fetch('https://jsonplaceholder.typicode.com/posts')
 //     .then(response => response.json()) // Parsing the response as JSON
 //     .then(data => console.log(data))   // Output the data to the console
 //     .catch(error => console.error('Error:', error)); // Handling any errors
@@ -690,7 +741,7 @@
 
 //Examples:
 
-// axios.get('https://jsonplaceholder.typicode.com/posts/1')
+// axios.get('https://jsonplaceholder.typicode.com/posts')
 //     .then(response => {
 //         console.log(response.data); // Output the data to the console
 //     })
@@ -712,7 +763,7 @@
 // Examples:
 // const fetchData=async()=> {
 //     try {
-//         const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+//         const response = await fetch('https://jsonplaceholder.typicode.com/posts');
 //         const data = await response.json();
 //         console.log(data);
 //     } catch (error) {
@@ -722,6 +773,27 @@
 
 // // Call the function
 // fetchData();
+
+//----------------------------------------------------
+
+// Closure:
+
+// It is a combination of function bundle together with reference to its surrounding state.
+// closure give access to outer function scope from an inner function 
+
+// Examples
+// function outer(){
+//     let count=0;
+//     function inner(){
+//         count++;
+//         console.log(`count is now ${count}`)
+//     }
+//     return inner
+// }
+
+// const mycost=outer()
+// mycost();
+// mycost();
 
 //----------------------------------------------------
 
@@ -749,7 +821,7 @@
 // excecute line by line eg: let a=10; =>first let b=12=>second  
 // asynchronous or non blocking model:
 // multiple operations excecuted at same time 
-
+    
 //----------------------------------------------------
 
 
@@ -759,7 +831,7 @@
 // 3) It return an array with two elements. 1) The current state value and a function to update the state.
 // 4) const[count, setcount]= useState(0), where "count" is the state variable, "set count" is the function to update it.
 // 5) when using normal variable in react and updating it will not cause re render and so we cannot see the changes in UI.
-// 6) To avoid this problem, react provides UseState Hook. This gives a state varaible and when updating it using SetState 
+// 6) To avoid this problem, react provides UseState Hook. This gives a state varaible and when updating it using SetState. 
 //    function, it causes re-renders and changes are visible on UI.
 // 7) So usestate and state variables are important for state management in react.
 

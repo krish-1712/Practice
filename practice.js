@@ -1,12 +1,13 @@
-class Animal {
+class Animal{
     constructor(name){
         this.name=name;
     }
 
     greet(){
-        return `Hello this is my ${this.name}`
+        return `hello my name is  ${this.name}`
     }
- }
+}
 
- let myName= new Animal("bull")
- console.log(myName.greet())
+const myPet= new Animal("buddy");
+
+console.log(myPet.greet());
